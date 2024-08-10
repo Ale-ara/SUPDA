@@ -129,7 +129,7 @@
         }
     
         .card {
-    display: block; /* Garante que o formulário esteja visível */
+    display: block;
 }
 
         .card.active {
@@ -285,7 +285,6 @@
     <body>
         <img src="https://i.imgur.com/GU8oq2S.png" alt="Imagem Inicial" class="initial-image">
         <div class="container">
-            <!-- Removido o botão para exibir diretamente o formulário -->
             
             <div class="card" id="postagem_testes">
                 <div class="tittle">Entrada</div>
@@ -502,6 +501,20 @@
         $("#" + formId).show(); 
     }
     </script>
-    
+        <script>
+window.onload = function() {
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+   
+    const nomeAplicador = getQueryParam('nome');
+
+    if (nomeAplicador) {
+        document.getElementById('nickname_aplicador').value = nomeAplicador;
+    }
+};
+</script>
     </body>
     </html>
